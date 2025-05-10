@@ -2,40 +2,40 @@
 #include<string>
 class Bank {
 private:
-    int acno;
-    char name[30];
-    long balance;
+    int ano;
+    char name[10];
+    long bal;
 
 public:
     void OpenAccount()
     {
        std:: cout << "Enter Account Number: ";
-        std::cin >> acno;
+        std::cin >> ano;
         std::cout << "Enter Name: ";
         std::cin >> name;
         std::cout << "Enter  Balance: ";
-        std::cin >> balance;
+        std::cin >> bal;
     }
     void ShowAccount()
     {
-        std::cout << "Account Number: " << acno <<std:: endl;
+        std::cout << "Account Number: " << ano <<std:: endl;
         std::cout << "Name: " << name << std::endl;
-        std::cout << "Balance: " << balance <<std::endl;
+        std::cout << "Balance: " << bal <<std::endl;
     }
     void Deposit()
     {
         long amt;
-        std::cout << "Enter Amount U want to deposit? ";
+        std::cout << "Enter Amount you want to deposit? ";
         std::cin >> amt;
-        balance = balance + amt;
+        bal = bal + amt;
     }
     void Withdrawal()
     {
         long amt;
-        std::cout << "Enter Amount U want to withdraw? ";
+        std::cout << "Enter Amount you want to withdraw? ";
         std::cin >> amt;
-        if (amt <= balance)
-            balance = balance - amt;
+        if (amt <= bal)
+            bal = bal - amt;
         else
             std::cout << "Less Balance..." << std::endl;
     }
@@ -56,26 +56,26 @@ int main()
 {
     Bank C[3];
 
-    int found = 0, a, ch, i;
+    int found = 0, a, choice, i;
     for (i = 0; i <= 2; i++) {
         C[i].OpenAccount();
     }
 
     do {
-        // display options
+        
         std::cout << "\n\n1:Display All\n2:By Account No\n3:Deposit\n4:Withdraw\n5:Exit" <<std::endl;
 
-        // user input
-        std::cout << "Please input your choice: ";
-        std::cin >> ch;
+        
+        std::cout << "Please enter your choice: ";
+        std::cin >> choice;
 
-        switch (ch) {
-        case 1: // displating account info
+        switch (choice) {
+        case 1: 
             for (i = 0; i <= 2; i++) {
                 C[i].ShowAccount();
             }
             break;
-        case 2: // searching the record
+        case 2: 
             std::cout << "Account Number? ";
             std::cin >> a;
             for (i = 0; i <= 2; i++) {
@@ -86,7 +86,7 @@ int main()
             if (!found)
                 std::cout << "Record Not Found" << std::endl;
             break;
-        case 3: // deposit operation
+        case 3: 
             std::cout << "Account Number To Deposit Amount? ";
             std::cin >> a;
             for (i = 0; i <= 2; i++) {
@@ -99,7 +99,7 @@ int main()
             if (!found)
                 std::cout << "Record Not Found" << std::endl;
             break;
-        case 4: // withdraw operation
+        case 4: 
             std::cout << "Account Number To Withdraw Amount? ";
             std::cin >> a;
             for (i = 0; i <= 2; i++) {
@@ -112,13 +112,13 @@ int main()
             if (!found)
                 std::cout << "Record Not Found" << std::endl;
             break;
-        case 5: // exit
-            std::cout << "Have a nice day" << std::endl;
+        case 5: 
+            std::cout << "GoodDay" << std::endl;
             break;
         default:
             std::cout << "Wrong Option" << std::endl;
         }
-    } while (ch != 5);
+    } while (choice != 5);
 
     return 0;
 }
