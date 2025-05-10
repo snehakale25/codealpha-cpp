@@ -9,8 +9,7 @@ void calcCGPA();
 int main()
 {
     
-    int input;
-    cout<<"=================================================================="<<endl;
+    int choice;
     cout<<"                    GPA & CGPA Calculator              "<<endl;
     cout<<"===================================================================\n"<<endl;
     cout<<"            MENU:"<<endl;
@@ -21,8 +20,8 @@ int main()
     cout<<"==================================================================="<<endl;
     sub:
     cout<<"Enter your choice: ";
-    cin>>input;
-    switch(input)
+    cin>>choice;
+    switch(choice)
     {
         case 1:
                 calcGPA();
@@ -36,7 +35,7 @@ int main()
                 exit(EXIT_SUCCESS);
                 break;
         default:
-            cout<<"wrong input.Try again!\n"<<endl;
+            cout<<"wrong choice.Try again!\n"<<endl;
             goto sub;
             break;
     }
@@ -85,7 +84,7 @@ void calcGPA()
     cout<<"\n\n\n1. Calculate Again"<<endl;
     cout<<"2. Go Back to Main Menu"<<endl;
     cout<<"3. Exit This App \n\n"<<endl;
-    cout<<"Your Input: "<<endl;
+    cout<<"Your choice: "<<endl;
     cin>>inmenu;
 
     switch(inmenu)
@@ -100,7 +99,7 @@ void calcGPA()
                 exit(EXIT_SUCCESS);
 
         default:
-              cout<<"\n\nWrong Input!Please Choose Again!"<<endl;
+              cout<<"\n\nWrong choicet!Please Choose Again!"<<endl;
               goto sub;
     }
 }
@@ -150,7 +149,7 @@ void calcCGPA()
                 exit(EXIT_SUCCESS);
 
         default:
-              cout<<"\n\nYou have Entered Wrong Input!Please Choose Again!"<<endl;
+              cout<<"\n\nYou have Entered Wrong choice!Please Choose Again!"<<endl;
               goto sub;
     }
 
